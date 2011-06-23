@@ -50,6 +50,10 @@ package deck.lnc.view.ui.map
 		private function closeClick(me:MouseEvent):void {
 			hide();
 			
+			
+			
+			
+			
 			dispatchEvent(new Event(METADATA_CLOSE));
 		}
 		
