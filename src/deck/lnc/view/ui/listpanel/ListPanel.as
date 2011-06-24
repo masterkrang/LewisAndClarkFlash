@@ -79,6 +79,7 @@ package deck.lnc.view.ui.listpanel
 			var sectionsLength:uint = mapVO.sections.length;
 			//trace("ListPanel section length " + sectionsLength);
 			var j:uint = 0; //aggregate for locations
+			var aggregateYPosition:uint = 0;
 			for(var i:uint = 0; i < sectionsLength; i++) {
 				//create list items
 				var section:SectionVO = mapVO.sections[i];
@@ -87,10 +88,7 @@ package deck.lnc.view.ui.listpanel
 					
 					var li:ListItem = getListItem(section.locations[j]);
 					
-					listItemContainer.addChild(li);
-					
-					li.y = j * ListItem.HEIGHT;
-					
+					li.y = aggregateYPosition;
 					li.index = j;
 					
 					//addChild(li);
@@ -99,7 +97,17 @@ package deck.lnc.view.ui.listpanel
 					li.addEventListener(ListItem.OVER, onListItemOver);
 					li.addEventListener(ListItem.OUT, onListItemOut);
 					
+					listItemContainer.addChild(li);
 					listItems.push(li);
+					
+					//increment y position
+					//max 2 lines
+					if(li.getNumLines() > 1) {
+						aggregateYPosition += ListItem.TWO_LINE_HEIGHT;
+					} else {
+						aggregateYPosition += ListItem.HEIGHT;
+					}
+					
 				}
 			}
 			
@@ -203,10 +211,10 @@ package deck.lnc.view.ui.listpanel
 			//scroller.update();
 		}
 		
-		private function getListItem(_location:LocationVO):ListItem {
+		private function getListItem(_locationVO:LocationVO):ListItem {
 			var li:ListItem = new ListItem();
 			
-			li.dataProvider = _location;
+			li.dataProvider = _locationVO;
 			
 			return li;
 		}

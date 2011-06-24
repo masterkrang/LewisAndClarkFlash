@@ -155,7 +155,7 @@ package
 		private function addChildren():void {
 			
 			//stack order
-			addChild(map);
+			//addChild(map);
 			addChild(key);
 			addChild(twitterWidget);
 			addChild(list);
@@ -256,6 +256,8 @@ package
 				
 				LayoutFactory.resizeMe(map, mapAreaWidth, mapAreaHeight, true);
 				
+				map.setCurrentMapZoomePercent(map.scaleX);
+				
 				map.x = LEFT_PANEL_WIDTH + (mapAreaWidth / 2 - map.width / 2);
 				//map.x = LEFT_PANEL_WIDTH;
 				map.y = mapAreaHeight / 2 - map.height / 2;
@@ -282,6 +284,23 @@ package
 			if(dashboardOpen) {
 				dashboard.x = sw / 2 - dashboard.width / 2;
 				dashboard.y = sh / 2 - dashboard.height / 2;
+			}
+			
+			
+			//place location metadata panel
+			
+			//only place the panel is a map location has been selected, else nobody has selected anything and it's just a browser resize
+			if(locationMetadata.hasBeenInited()) {
+				trace("resizing location metadata");
+				var selectedLocation:Location = map.getSelectedLocation();
+				var centerX:Number = LEFT_PANEL_WIDTH + getMapAreaWidth() / 2;
+				var centerY:Number = getMapAreaHeight() / 2;
+				
+				var newX:Number = centerX - ((selectedLocation.originalWidth * map.getCurrentMapZoomPercent()) / 2);
+				var newY:Number = centerY - ((selectedLocation.originalHeight * map.getCurrentMapZoomPercent()) / 2);
+				
+				locationMetadata.x = newX;
+				locationMetadata.y = newY;
 			}
 		}
 		
@@ -314,8 +333,9 @@ package
 			//map.mouseEnabled = false;
 			//map.disable();
 			
-			if(locationMetadataShowing) {
+			if(locationMetadata.isShowing()) {
 				locationMetadata.hide();
+				//locationMetadataShowing = false;
 			}
 			
 			zoomInOnLocation(loc);
@@ -347,6 +367,7 @@ package
 			//trace("new fake sprite width / height " + s.width + " / " + s.height);
 			
 			var resizePercent:Number = (s.width / loc.originalWidth) * .25;//.80; // * .80 don't want to fill the whole screen
+			map.setCurrentMapZoomePercent(resizePercent);
 			//trace("resize percent " + resizePercent);
 			
 			//also need to figure out new negative x and y positions for map to tween
@@ -464,14 +485,28 @@ package
 				addChild(locationMetadata);
 			}
 			//addChild(locationMetadata);
-			locationMetadata.x = LEFT_PANEL_WIDTH + getMapAreaWidth() / 2;//center it
-			locationMetadata.y = getMapAreaHeight() / 2;
+			
+			//locationMetadata.x = LEFT_PANEL_WIDTH + getMapAreaWidth() / 2;//center it
+			//locationMetadata.y = getMapAreaHeight() / 2;
+			//tween it to these x and y
+			//get location 
+			var selectedLocation:Location = map.getSelectedLocation();
+			var centerX:Number = LEFT_PANEL_WIDTH + getMapAreaWidth() / 2;
+			var centerY:Number = getMapAreaHeight() / 2;
+			
+			var newX:Number = centerX - ((selectedLocation.originalWidth * map.getCurrentMapZoomPercent()) / 2);
+			var newY:Number = centerY - ((selectedLocation.originalHeight * map.getCurrentMapZoomPercent()) / 2);
+			
+			locationMetadata.x = newX;
+			locationMetadata.y = newY;
+			
+			//TweenMax.to(locationMetadata, ZOOM_IN_TIME, {x:newX, y:newY});
 			locationMetadata.show();
 		}
 		
 		public function hideLocationMetadata():void {
-			locationMetadataShowing = false;
 			locationMetadata.hide();
+			locationMetadataShowing = false;
 		}
 		
 		public function locationMetadataDashboardLinkClick(e:Event):void {

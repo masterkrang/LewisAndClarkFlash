@@ -6,30 +6,12 @@
 	<!-- locations -->
 	
 	
-<!--
-
-
-
-
-
-
-
-
-
-Residence Halls
-
-
- 
- 
- 
-
- 
-
- 
- 
-
--->
- 
+	<!--
+	
+	Residence Halls
+	
+	-->
+	 
  
 	
 	<locations>
@@ -38,7 +20,7 @@ Residence Halls
 		
 			<location>
 				<title>1 Griswold Stadium</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>1</buildingnumber>
 				<xposition>1013</xposition>
 				<yposition>253</yposition> 
@@ -47,7 +29,7 @@ Residence Halls
 			
 			<location>
 				<title>2 Tennis Courts</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>2</buildingnumber>
 				<xposition>1143</xposition>
 				<yposition>245</yposition> 
@@ -56,7 +38,7 @@ Residence Halls
 		
 			<location>
 				<title>3 Pamplin Sports Center</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>3</buildingnumber>
 				<xposition>1151</xposition>
 				<yposition>330</yposition> 
@@ -66,7 +48,7 @@ Residence Halls
 			
 			<location>
 				<title>4 Zehntbauer Swimming Pavilion</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>4</buildingnumber>
 				<xposition>1212</xposition>
 				<yposition>321</yposition> 
@@ -75,7 +57,7 @@ Residence Halls
 			
 			<location>
 				<title>5 J.R. Howard Hall</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>5</buildingnumber>
 				<xposition>1282</xposition>
 				<yposition>314</yposition> 
@@ -84,7 +66,7 @@ Residence Halls
 			
 			<location>
 				<title>10 Evans Music Center</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>10</buildingnumber>
 				<xposition>1303</xposition>
 				<yposition>223</yposition> 
@@ -93,7 +75,7 @@ Residence Halls
 			
 			<location>
 				<title>11 Biology-Psychology</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>11</buildingnumber>
 				<xposition>1326</xposition>
 				<yposition>242</yposition> 
@@ -102,7 +84,7 @@ Residence Halls
 			
 			<location>
 				<title>12 BoDine</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>12</buildingnumber>
 				<xposition>1326</xposition>
 				<yposition>317</yposition> 
@@ -111,7 +93,7 @@ Residence Halls
 		
 			<location>
 				<title>14 Albany Quadrangle (includes Smith Hall)</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>14</buildingnumber>
 				<xposition>1384</xposition>
 				<yposition>319</yposition> 
@@ -120,7 +102,7 @@ Residence Halls
 			
 			<location>
 				<title>15 Fir Acres Theatre</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>15</buildingnumber>
 				<xposition>1395</xposition>
 				<yposition>238</yposition> 
@@ -129,7 +111,7 @@ Residence Halls
 			
 			<location>
 				<title>17 Olin Center for Physics and Chemistry</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>17</buildingnumber>
 				<xposition>1446</xposition>
 				<yposition>361</yposition> 
@@ -138,7 +120,7 @@ Residence Halls
 			
 			<location>
 				<title>18 Greenhouse (access through Olin)</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>18</buildingnumber>
 				<xposition>600</xposition>
 				<yposition>390</yposition> 
@@ -147,7 +129,7 @@ Residence Halls
 			
 			<location>
 				<title>19 Telescope (access through Olin)</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>19</buildingnumber>
 				<xposition>800</xposition>
 				<yposition>390</yposition> 
@@ -157,7 +139,7 @@ Residence Halls
 			
 			<location>
 				<title>20 Alumni Circle</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>20</buildingnumber>
 				<xposition>1392</xposition>
 				<yposition>469</yposition> 
@@ -167,7 +149,7 @@ Residence Halls
 			
 			<location>
 				<title>21 Tennis Court </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>21</buildingnumber>
 				<xposition>1538</xposition>
 				<yposition>513</yposition> 
@@ -176,7 +158,7 @@ Residence Halls
 			
 			<location>
 				<title>22 Rose Garden </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>22</buildingnumber>
 				<xposition>1582</xposition>
 				<yposition>558</yposition> 
@@ -185,7 +167,7 @@ Residence Halls
 			
 			<location>
 				<title>23 Outdoor Pool and Dressing Pavilion</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>23</buildingnumber>
 				<xposition>1493</xposition>
 				<yposition>552</yposition> 
@@ -194,7 +176,7 @@ Residence Halls
 			
 			<location>
 				<title>24 Fields Center for the Visual Arts</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>24</buildingnumber>
 				<xposition>1438</xposition>
 				<yposition>464</yposition> 
@@ -203,7 +185,7 @@ Residence Halls
 			
 			<location>
 				<title>25 Miller Center for the Humanities</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>25</buildingnumber>
 				<xposition>1380</xposition>
 				<yposition>426</yposition> 
@@ -212,7 +194,7 @@ Residence Halls
 			
 			<location>
 				<title>26 Watzek Library</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>26</buildingnumber>
 				<xposition>1310</xposition>
 				<yposition>438</yposition> 
@@ -221,7 +203,7 @@ Residence Halls
 			
 			<location>
 				<title>26S Hoffman Gallery of Contemporary Art</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>26S</buildingnumber>
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
@@ -230,7 +212,7 @@ Residence Halls
 			
 			<location>
 				<title>27 Estate Gardens</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>27</buildingnumber>
 				<xposition>1424</xposition>
 				<yposition>544</yposition> 
@@ -239,7 +221,7 @@ Residence Halls
 			
 			<location>
 				<title>28 Frank Manor House </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>28</buildingnumber>
 				<xposition>1199</xposition>
 				<yposition>510</yposition> 
@@ -248,7 +230,7 @@ Residence Halls
 			
 			<location>
 				<title>29 Flanagan Chapel </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>29</buildingnumber>
 				<xposition>1073</xposition>
 				<yposition>430</yposition> 
@@ -258,7 +240,7 @@ Residence Halls
 				
 			<location>
 				<title>30 Campus Safety </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>30</buildingnumber>
 				<xposition>1011</xposition>
 				<yposition>430</yposition> 
@@ -267,7 +249,7 @@ Residence Halls
 				
 			<location>
 				<title>32 Odell Alumni Gatehouse</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>32</buildingnumber>
 				<xposition>994</xposition>
 				<yposition>470</yposition> 
@@ -276,7 +258,7 @@ Residence Halls
 				
 			<location>
 				<title>36 Templeton Campus Center</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>36</buildingnumber>
 				<xposition>1124</xposition>
 				<yposition>639</yposition> 
@@ -285,7 +267,7 @@ Residence Halls
 				
 			<location>
 				<title>46 McAfee</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>46</buildingnumber>
 				<xposition>1271</xposition>
 				<yposition>838</yposition> 
@@ -294,7 +276,7 @@ Residence Halls
 				
 			<location>
 				<title>47 Facilities Services</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>47</buildingnumber>
 				<xposition>1258</xposition>
 				<yposition>913</yposition> 
@@ -303,7 +285,7 @@ Residence Halls
 				
 			<location>
 				<title>47A Facilities Services Administration</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>47A</buildingnumber>
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
@@ -312,7 +294,7 @@ Residence Halls
 				
 			<location>
 				<title>51 Heating and Cooling Plant </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>51</buildingnumber>
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
@@ -322,7 +304,7 @@ Residence Halls
 				
 			<location>
 				<title>61 Huston Sports Complex</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>61</buildingnumber>
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
@@ -332,7 +314,7 @@ Residence Halls
 				
 			<location>
 				<title>81A South Chapel</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>81A</buildingnumber>
 				<xposition>1185</xposition>
 				<yposition>1163</yposition> 
@@ -342,7 +324,7 @@ Residence Halls
 				
 			<location>
 				<title>81B South Chapel Annex</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>81B</buildingnumber>
 				<xposition>1177</xposition>
 				<yposition>1203</yposition> 
@@ -352,7 +334,7 @@ Residence Halls
 				
 			<location>
 				<title>82 Corbett House</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>82</buildingnumber>
 				<xposition>1115</xposition>
 				<yposition>1214</yposition> 
@@ -361,7 +343,7 @@ Residence Halls
 				
 			<location>
 				<title>83 Rogers Hall </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>83</buildingnumber>
 				<xposition>1039</xposition>
 				<yposition>1228</yposition> 
@@ -371,7 +353,7 @@ Residence Halls
 				
 			<location>
 				<title>84 Sequoia </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>84</buildingnumber>
 				<xposition>1030</xposition>
 				<yposition>1187</yposition> 
@@ -381,7 +363,7 @@ Residence Halls
 				
 			<location>
 				<title>85 Conference Center</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>85</buildingnumber>
 				<xposition>1070</xposition>
 				<yposition>1147</yposition> 
@@ -394,7 +376,7 @@ Residence Halls
 			
 			<location>
 				<title>33 Akin </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>33</buildingnumber>
 				<xposition>1031</xposition>
 				<yposition>538</yposition> 
@@ -403,7 +385,7 @@ Residence Halls
 			
 			<location>
 				<title>34 Stewart</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>34</buildingnumber>
 				<xposition>996</xposition>
 				<yposition>660</yposition> 
@@ -412,7 +394,7 @@ Residence Halls
 			
 			<location>
 				<title>35 Odell</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>35</buildingnumber>
 				<xposition>1033</xposition>
 				<yposition>697</yposition> 
@@ -421,7 +403,7 @@ Residence Halls
 			
 			<location>
 				<title>40 West</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>40</buildingnumber>
 				<xposition>1083</xposition>
 				<yposition>788</yposition> 
@@ -430,7 +412,7 @@ Residence Halls
 			
 			<location>
 				<title>41 Roberts</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>41</buildingnumber>
 				<xposition>1151</xposition>
 				<yposition>778</yposition> 
@@ -439,7 +421,7 @@ Residence Halls
 			
 			<location>
 				<title>42 East</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>42</buildingnumber>
 				<xposition>1194</xposition>
 				<yposition>832</yposition> 
@@ -448,7 +430,7 @@ Residence Halls
 			
 			<location>
 				<title>43 Howard </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>43</buildingnumber>
 				<xposition>1271</xposition>
 				<yposition>703</yposition> 
@@ -457,7 +439,7 @@ Residence Halls
 			
 			<location>
 				<title>44 Platt (West and East)</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>44</buildingnumber>
 				<xposition>1282</xposition>
 				<yposition>757</yposition> 
@@ -466,7 +448,7 @@ Residence Halls
 			
 			<location>
 				<title>45 Copeland (A-G) </title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>45</buildingnumber>
 				<xposition>1389</xposition>
 				<yposition>760</yposition> 
@@ -475,7 +457,7 @@ Residence Halls
 			
 			<location>
 				<title>49 Hartzfeld (A-D)</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>49</buildingnumber>
 				<xposition>1147</xposition>
 				<yposition>916</yposition> 
@@ -484,7 +466,7 @@ Residence Halls
 			
 			<location>
 				<title>50 Forest (Alder, Juniper, Manzanita, Ponderosa, Spruce, Tamarack)</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>50</buildingnumber>
 				<xposition>1033</xposition>
 				<yposition>867</yposition> 
@@ -497,7 +479,7 @@ Residence Halls
 		
 		 	<location>
 				<title>83 Rogers Hall</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>83</buildingnumber>
 				<xposition>1039</xposition>
 				<yposition>1228</yposition> 
@@ -509,7 +491,7 @@ Residence Halls
 		<section name="Law School">
 			<location>
 				<title>L1 Legal Research Center</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>L1</buildingnumber>
 				<xposition>529</xposition>
 				<yposition>275</yposition> 
@@ -518,7 +500,7 @@ Residence Halls
 			
 			<location>
 				<title>L2A Boley Law Library</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>L2A</buildingnumber>
 				<xposition>374.25</xposition>
 				<yposition>172.10</yposition> 
@@ -527,7 +509,7 @@ Residence Halls
 			
 			<location>
 				<title>L2B Wood Hall</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>L2B</buildingnumber>
 				<xposition>426.55</xposition>
 				<yposition>222.75</yposition> 
@@ -536,7 +518,7 @@ Residence Halls
 			
 			<location>
 				<title>L3 McCarty Classroom Complex</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>L3</buildingnumber>
 				<xposition>449</xposition>
 				<yposition>160</yposition> 
@@ -545,7 +527,7 @@ Residence Halls
 			
 			<location>
 				<title>L4 Gantenbein</title>
-				<description>this is the description</description>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
 				<buildingnumber>L4</buildingnumber>
 				<xposition>490</xposition>
 				<yposition>190</yposition> 

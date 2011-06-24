@@ -61,6 +61,8 @@ package deck.lnc.view.ui.map
 		//panel that's pops up on rollover of regions, or on highlight of region
 		private var locationMetadata:LocationMetadata;
 		
+		private var currentMapZoomPercent:Number;
+		
 		//private var building1:Building1;
 		
 		//building sprites
@@ -68,7 +70,7 @@ package deck.lnc.view.ui.map
 		//private var building26:Sprite;
 		
 		public var locationOverIndex:uint = 0; //may need to take this off of 0
-		
+	
 		public function Map()
 		{
 			init();
@@ -92,11 +94,11 @@ package deck.lnc.view.ui.map
 			//too intense
 			//map = new MapVector();
 			
-			map = new MapImage();
+			//map = new MapImage();
 			
 			//set original width / height
-			originalWidth = map.width;
-			originalHeight = map.height;
+			originalWidth = 1614;
+			originalHeight = 1270;
 			
 			//buildingds
 			//building3 = new Building3();
@@ -184,6 +186,14 @@ package deck.lnc.view.ui.map
 			//placeMarkers();
 			
 			setLocations();
+		}
+		
+		public function setCurrentMapZoomePercent(_percent:Number):void {
+			currentMapZoomPercent = _percent;
+		}
+		
+		public function getCurrentMapZoomPercent():Number {
+			return currentMapZoomPercent;
 		}
 		
 		/****************** LOCATIONS ********************/
@@ -307,7 +317,7 @@ package deck.lnc.view.ui.map
 		public function locationClick(me:MouseEvent):void {
 			trace("location click");
 			
-			//lock the map, maybe lock the app
+		//lock the map, maybe lock the app
 			var clickedLocation:Location = Location(me.target);
 			//do map specific click stuff like selections
 			
@@ -379,6 +389,9 @@ package deck.lnc.view.ui.map
 			return selected;
 		}
 		
+		public function getSelectedLocation():Location {
+			return locations[getSelected()];
+		}
 		
 		public function enable():void {
 			mouseChildren = true;

@@ -31,55 +31,41 @@ package com.kurt.util
 			return tf;
 		}
 		
-		/*
-		public static function getNavigationTitleFormat():TextFormat {
-			trace("turn fonts back on");
+		public static function getLocationMetadataTitleFormat():TextFormat {
+			//trace("turn fonts back on");
 			
-			var font:Font = new StagStencilBold();
+			//var font:Font = new StagStencilBold();
 			var tf:TextFormat = new TextFormat();
-			tf.font = font.fontName;
+			//tf.font = font.fontName;
 			tf.size = 14;
-			tf.color = 0xAAACAE;
-			tf.align = TextFormatAlign.CENTER; //TextFormatAlign.LEFT;
-			return tf;
-		}
-		
-		public static function getLoadingFormat():TextFormat {
-			trace("turn fonts back on");
-			
-			var font:Font = new StagStencilBold();
-			var tf:TextFormat = new TextFormat();
-			tf.font = font.fontName;
-			tf.size = 14;
-			tf.color = 0xAAACAE;
+			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;
 			return tf;
 		}
 		
-		public static function getSubtitleFormat():TextFormat {
-			trace("turn fonts back on");
+		public static function getLocationMetadataDescriptionFormat():TextFormat {
+			//trace("turn fonts back on");
 			
-			var font:Font = new StagStencilBold();
+			//var font:Font = new StagStencilBold();
 			var tf:TextFormat = new TextFormat();
-			tf.font = font.fontName;
-			tf.size = 33;
-			tf.color = 0xAAACAE;
+			//tf.font = font.fontName;
+			tf.size = 14;
+			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;
 			return tf;
 		}
 		
-		public static function getBackButtonFormat():TextFormat {
-			trace("turn fonts back on");
+		public static function getLocationMetadataDashboardLinkFormat():TextFormat {
+			//trace("turn fonts back on");
 			
-			var font:Font = new StagStencilBold();
+			//var font:Font = new StagStencilBold();
 			var tf:TextFormat = new TextFormat();
-			tf.font = font.fontName;
+			//tf.font = font.fontName;
 			tf.size = 14;
-			tf.color = 0x000000;
+			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;
 			return tf;
 		}
-		*/
 		
 		public static function setTextParams(tf:TextField, 
 											 _embedFonts:Boolean = true, 
