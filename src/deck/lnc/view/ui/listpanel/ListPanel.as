@@ -71,7 +71,7 @@ package deck.lnc.view.ui.listpanel
 		
 		public function set dataProvider(_mapVO:MapVO):void {
 			
-			//trace("ListPanel dataprovider");
+			trace("ListPanel dataprovider " + _mapVO.sections.length);
 			mapVO = _mapVO;
 			
 			

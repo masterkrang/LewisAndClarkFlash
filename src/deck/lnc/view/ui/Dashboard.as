@@ -11,6 +11,7 @@ package deck.lnc.view.ui
 	import flash.events.IOErrorEvent;
 	import flash.events.MouseEvent;
 	import flash.events.ProgressEvent;
+	import flash.filters.DropShadowFilter;
 	import flash.net.URLRequest;
 	
 	public class Dashboard extends Sprite
@@ -48,6 +49,12 @@ package deck.lnc.view.ui
 			closeButton.y = 0;
 			
 			//addChild(closeButton);
+			addFilters();
+		}
+		
+		public function addFilters(_filters:Array = null):void {
+			var dsf:DropShadowFilter = new DropShadowFilter(10.0, 45, 0, .5, 10.0, 10.0);
+			this.filters = [dsf];
 		}
 		
 		private function drawBG():void {
@@ -131,5 +138,7 @@ package deck.lnc.view.ui
 			
 			//destroy swf, do the swf's have clean methods?
 		}
+		
+		
 	}
 }

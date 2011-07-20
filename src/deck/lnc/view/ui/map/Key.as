@@ -61,10 +61,10 @@ package deck.lnc.view.ui.map
 		
 		private function draw():void {
 			bg = new Sprite();
-			bg.graphics.beginFill(0xCCCCCC, .2);
+			bg.graphics.beginFill(0xFFFFFF);
 			bg.graphics.drawRect(0,0,270, 350);
 			bg.graphics.endFill();
-			bg.alpha = .3;
+			bg.alpha = .7;
 			addChild(bg);
 			
 			addChild(keyContents);

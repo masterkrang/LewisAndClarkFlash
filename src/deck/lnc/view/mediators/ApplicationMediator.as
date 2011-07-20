@@ -38,7 +38,7 @@ package deck.lnc.view.mediators
 		}
 		
 		override public function handleNotification(note:INotification):void {
-			trace("AppMediator::handleNotification() " + note.getBody());
+			//trace("AppMediator::handleNotification() " + note.getBody());
 			switch (note.getName()) {
 				case ApplicationFacade.DATA_READY:
 					trace(NAME + "::" + ApplicationFacade.DATA_READY);
@@ -53,9 +53,12 @@ package deck.lnc.view.mediators
 					app.onListPanelClicked(note.getBody() as LocationVO);
 					break;
 				case ApplicationFacade.MAP_LOCATION_CLICK:
-					trace(NAME + "::" + note.getName());
+					//trace(NAME + "::" + note.getName());
 					app.mapLocationClick(note.getBody() as Location);
 					break;
+				
+				//listen for external interface calls (javascript calls)
+				//case ApplicationFacade.OPEN_DASHBOARD
 				default:
 					trace("ApplicationMediator notification not handled");
 					break;

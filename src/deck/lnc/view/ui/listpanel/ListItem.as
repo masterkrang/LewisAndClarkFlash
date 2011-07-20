@@ -80,7 +80,7 @@ package deck.lnc.view.ui.listpanel
 			
 			tf.x = MARGIN_LEFT;
 			
-			trace("tf.numLines " + tf.numLines);
+			//trace("tf.numLines " + tf.numLines);
 			
 			draw();
 		}
@@ -116,7 +116,7 @@ package deck.lnc.view.ui.listpanel
 		}
 		
 		private function onClick(me:MouseEvent):void {
-			trace("ListItem click");
+			//trace("ListItem click");
 			
 			//change the color of bg
 			
@@ -124,15 +124,13 @@ package deck.lnc.view.ui.listpanel
 				
 			} else {
 				select();
+				dispatchEvent(new Event(CLICK));
 			}
-			
-			dispatchEvent(new Event(CLICK));
 		}
 		
 		private function onOver(me:MouseEvent):void {
-			//trace("ListItem over");
+			//trace("ListItem over " + index);
 			
-			//trace("over mouseX " + mouseX + " mouseY " + mouseY);
 			if(getSelected()) {
 				
 			} else {
@@ -146,12 +144,9 @@ package deck.lnc.view.ui.listpanel
 			dispatchEvent(new Event(OVER));
 		}
 		
-		public function getSelected():Boolean {
-			return selected;
-		}
 		
 		private function onOut(me:MouseEvent):void {
-			//trace("ListItem out");
+			//trace("ListItem out " + index);
 			
 			if(getSelected()) {
 				
@@ -161,13 +156,17 @@ package deck.lnc.view.ui.listpanel
 				bg.visible = true;
 			}
 			
-			selected = false;
+			//selected = false;
 			
 			dispatchEvent(new Event(OUT));
 		}
 		
+		public function getSelected():Boolean {
+			return selected;
+		}
+		
 		public function deselect():void {
-			trace("deselect called");
+			//trace("deselect called");
 			bgOver.visible = false;
 			bgSelected.visible = false;
 			bg.visible = true;
@@ -177,7 +176,7 @@ package deck.lnc.view.ui.listpanel
 		}
 		
 		public function select():void {
-			trace("select called");
+			//trace("select called");
 			bgOver.visible = false;
 			bgSelected.visible = true;
 			bg.visible = false;

@@ -25,6 +25,8 @@ package deck.lnc.view.ui.map
 		
 		private var overed:Boolean = false;
 		
+		public static const LOCATION_MOUSEOVER_GROW_PERCENT:Number = 1.5;
+		
 		public static const OUT_ANIMATION_COMPLETE:String = "outAnimationComplete";
 		
 		public function Location()
@@ -74,7 +76,7 @@ package deck.lnc.view.ui.map
 			
 			//perhaps growing a bit and a glow?
 			if(graphic) {
-				TweenMax.to(graphic, .5, {scaleX:2, scaleY:2});
+				TweenMax.to(graphic, .5, {scaleX:LOCATION_MOUSEOVER_GROW_PERCENT, scaleY:LOCATION_MOUSEOVER_GROW_PERCENT});
 			}
 		}
 		

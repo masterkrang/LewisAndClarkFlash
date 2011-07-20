@@ -1,11 +1,15 @@
 package deck.lnc.model
 {
+	import com.adobe.serialization.json.JSON;
+	import com.adobe.serialization.json.JSONEncoder;
+	
 	import deck.lnc.ApplicationFacade;
 	import deck.lnc.model.vo.twitter.TweetVO;
 	import deck.lnc.model.vo.twitter.TwitterVO;
 	
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
+	import flash.external.ExternalInterface;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
@@ -34,20 +38,49 @@ package deck.lnc.model
 			
 			twitterVO = new TwitterVO();
 			
+			ExternalInterface.addCallback("setFlashTweets", setTweets);
+			
 			//load tweets
 			loadTweets();
 		}
 		
 		private function loadTweets():void {
+			/*
 			tweetsLoader = new URLLoader();
 			tweetsLoader.addEventListener(Event.COMPLETE, tweetsLoaded);
 			tweetsLoader.addEventListener(IOErrorEvent.IO_ERROR, tweetsIOError);
 			tweetsLoader.load(new URLRequest(tweetsPath));
+			*/
+			
+			trace("loadtweets");
+			
+			//load from js
+			ExternalInterface.call("getTweets");
+			
 		}
 		
-		private function tweetsLoaded(e:Event):void {
+		private function setTweets(data:String):void {
+			
+			//ExternalInterface.call("outputCall", "setTweets called");
+			
+			//trace("setTweets " + data);
+			
+			//tweetsXML = JSON.decode(data);
+			
+			//var o:String = JSON.decode(data);
+			
+			//var a:Array = JSON.decode(data) as Array;
+			
+			//trace("array " + a.toString());
+			
+			//tweetsXML = data as XML;
+			
+			tweetsLoaded();
+		}
+		
+		private function tweetsLoaded(e:Event = null):void {
 			//trace("tweets xml " + e.target.data);
-			tweetsXML = XML(e.target.data);
+			//tweetsXML = XML(e.target.data);
 			
 			twitterVO = getTwitterVO(tweetsXML);
 			

@@ -3,6 +3,46 @@
 	<!-- top level settings -->
 	<mapurl>assets/images/campus-map.png</mapurl>
 	
+	
+	<!-- configuration parameters -->
+	
+	<config>
+		<!-- location list scroll panel -->
+		<locationslist>
+			<!-- GENERAL -->
+			
+			<!-- width of panel -->
+			<width></width>
+			
+			<!-- height of panel -->
+			<height></height>
+			
+			<!-- whether the panel should use a width percentage 
+				if "true" height and width should be set to percentages, not pixels -->
+			<usewidthpercentage>false</usewidthpercentage>
+			<useheightpercentage>false</useheightpercentage>
+			
+			
+			<!-- align to the "left" or "right"? (should add top or bottom?) -->
+			<align>left</align>
+		
+			<!-- LIST ITEMS -->
+			
+			<!-- list item colors
+				 this is a gradient which uses 2 hexidecimal colors -->
+				 
+			<listitemcolor1>0xFFFFFF</listitemcolor1>
+			<listitemcolor2>0x333333</listitemcolor2>
+			
+			<!-- alpha transparency level for list items in the list panel 
+				this is a decimal from 0.0 (full transparency) to 1.0 (full opacity) -->
+			<listitemalpha></listitemalpha>
+			
+			
+		</locationslist>
+	
+	</config>
+	
 	<!-- locations -->
 	
 	
@@ -12,8 +52,9 @@
 	
 	-->
 	 
- 
-	
+ 	<!--
+	["akin_1", "albany_1", "biopsych_1", "bodine_1", "centralplant_1", "copeland_1", "easthall_1", "evansmusic_1", "fieldscenter_1", "fields_1", "firacres_1", "hartzfeld_1", "jrhoward_1", "miller_1", "watzek_1", "roberts_1", "rogers_1", "sequoia_1", "stewart_1", "sthchappel_1", "templeton_1", "tennisdome_1", "westhall_1", "campussafety_1", "corbetthouse_1", "facilities_1", "flanaganchappel2_1", "frankmanorhouse_1", "gatehouse_1", "gregpavilion2_1", "gregpavilion3_1", "griswoldstadium_1", "olin_1", "pamplin_1", "sthcampusconfcntr_1", "sthchappelannex_1", "forest", "forest_1", "gatenbein", "gatenbein_1", "lawschool", "lawschool_1", "legalresearchcntr", "legalresearchcntr_1", "mccarty", "mccarty_1", "platt", "platt_1", "woodhallboley", "woodhallboley_1", "centralplntcapstone", "centralplntcapstone_1", "corbett", "sthcampucconfcntr"] 
+	-->
 	<locations>
 			
 		<section name="Buildings and Features">
@@ -24,8 +65,8 @@
 				<buildingnumber>1</buildingnumber>
 				<xposition>1013</xposition>
 				<yposition>253</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>griswoldstadium_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>2 Tennis Courts</title>
@@ -33,8 +74,8 @@
 				<buildingnumber>2</buildingnumber>
 				<xposition>1143</xposition>
 				<yposition>245</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>tennisdome_1</dashboardpath>
+		    </location>
 		
 			<location>
 				<title>3 Pamplin Sports Center</title>
@@ -42,8 +83,8 @@
 				<buildingnumber>3</buildingnumber>
 				<xposition>1151</xposition>
 				<yposition>330</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>pamplin_1</dashboardpath>
+		    </location>
 	
 			
 			<location>
@@ -53,7 +94,7 @@
 				<xposition>1212</xposition>
 				<yposition>321</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>5 J.R. Howard Hall</title>
@@ -61,8 +102,8 @@
 				<buildingnumber>5</buildingnumber>
 				<xposition>1282</xposition>
 				<yposition>314</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>jrhoward_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>10 Evans Music Center</title>
@@ -70,8 +111,8 @@
 				<buildingnumber>10</buildingnumber>
 				<xposition>1303</xposition>
 				<yposition>223</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>evansmusic_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>11 Biology-Psychology</title>
@@ -79,8 +120,8 @@
 				<buildingnumber>11</buildingnumber>
 				<xposition>1326</xposition>
 				<yposition>242</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>biopsych_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>12 BoDine</title>
@@ -88,8 +129,8 @@
 				<buildingnumber>12</buildingnumber>
 				<xposition>1326</xposition>
 				<yposition>317</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>bodine_1</dashboardpath>
+		    </location>
 		
 			<location>
 				<title>14 Albany Quadrangle (includes Smith Hall)</title>
@@ -97,8 +138,8 @@
 				<buildingnumber>14</buildingnumber>
 				<xposition>1384</xposition>
 				<yposition>319</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>albany_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>15 Fir Acres Theatre</title>
@@ -106,8 +147,8 @@
 				<buildingnumber>15</buildingnumber>
 				<xposition>1395</xposition>
 				<yposition>238</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>firacres_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>17 Olin Center for Physics and Chemistry</title>
@@ -115,8 +156,8 @@
 				<buildingnumber>17</buildingnumber>
 				<xposition>1446</xposition>
 				<yposition>361</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>olin_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>18 Greenhouse (access through Olin)</title>
@@ -125,7 +166,7 @@
 				<xposition>600</xposition>
 				<yposition>390</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>19 Telescope (access through Olin)</title>
@@ -134,7 +175,7 @@
 				<xposition>800</xposition>
 				<yposition>390</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			
 			<location>
@@ -144,7 +185,7 @@
 				<xposition>1392</xposition>
 				<yposition>469</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			
 			<location>
@@ -154,7 +195,7 @@
 				<xposition>1538</xposition>
 				<yposition>513</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>22 Rose Garden </title>
@@ -163,7 +204,7 @@
 				<xposition>1582</xposition>
 				<yposition>558</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>23 Outdoor Pool and Dressing Pavilion</title>
@@ -172,7 +213,7 @@
 				<xposition>1493</xposition>
 				<yposition>552</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>24 Fields Center for the Visual Arts</title>
@@ -180,8 +221,8 @@
 				<buildingnumber>24</buildingnumber>
 				<xposition>1438</xposition>
 				<yposition>464</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>fieldscenter_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>25 Miller Center for the Humanities</title>
@@ -189,8 +230,8 @@
 				<buildingnumber>25</buildingnumber>
 				<xposition>1380</xposition>
 				<yposition>426</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>miller_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>26 Watzek Library</title>
@@ -198,8 +239,8 @@
 				<buildingnumber>26</buildingnumber>
 				<xposition>1310</xposition>
 				<yposition>438</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>watzek_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>26S Hoffman Gallery of Contemporary Art</title>
@@ -208,7 +249,7 @@
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>27 Estate Gardens</title>
@@ -217,7 +258,7 @@
 				<xposition>1424</xposition>
 				<yposition>544</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>28 Frank Manor House </title>
@@ -225,8 +266,8 @@
 				<buildingnumber>28</buildingnumber>
 				<xposition>1199</xposition>
 				<yposition>510</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>frankmanorhouse_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>29 Flanagan Chapel </title>
@@ -234,8 +275,8 @@
 				<buildingnumber>29</buildingnumber>
 				<xposition>1073</xposition>
 				<yposition>430</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>flanaganchappel2_1</dashboardpath>
+		    </location>
 				
 				
 			<location>
@@ -244,8 +285,17 @@
 				<buildingnumber>30</buildingnumber>
 				<xposition>1011</xposition>
 				<yposition>430</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>campussafety_1</dashboardpath>
+		    </location>
+			
+			<location>
+				<title>31 Gregg Pavilion</title>
+				<description>this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description this is the description ...</description>
+				<buildingnumber>31</buildingnumber>
+				<xposition>1105</xposition>
+				<yposition>457</yposition> 
+				<dashboardpath>gregpavilion3_1</dashboardpath>
+		    </location>
 				
 			<location>
 				<title>32 Odell Alumni Gatehouse</title>
@@ -253,8 +303,8 @@
 				<buildingnumber>32</buildingnumber>
 				<xposition>994</xposition>
 				<yposition>470</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>gatehouse_1</dashboardpath>
+		    </location>
 				
 			<location>
 				<title>36 Templeton Campus Center</title>
@@ -262,8 +312,8 @@
 				<buildingnumber>36</buildingnumber>
 				<xposition>1124</xposition>
 				<yposition>639</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>templeton_1</dashboardpath>
+		    </location>
 				
 			<location>
 				<title>46 McAfee</title>
@@ -272,7 +322,7 @@
 				<xposition>1271</xposition>
 				<yposition>838</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 				
 			<location>
 				<title>47 Facilities Services</title>
@@ -280,8 +330,8 @@
 				<buildingnumber>47</buildingnumber>
 				<xposition>1258</xposition>
 				<yposition>913</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>facilities_1</dashboardpath>
+		    </location>
 				
 			<location>
 				<title>47A Facilities Services Administration</title>
@@ -290,7 +340,7 @@
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 				
 			<location>
 				<title>51 Heating and Cooling Plant </title>
@@ -298,8 +348,8 @@
 				<buildingnumber>51</buildingnumber>
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>centralplant_1</dashboardpath>
+		    </location>
 				
 				
 			<location>
@@ -309,7 +359,7 @@
 				<xposition>1250</xposition>
 				<yposition>390</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 				
 				
 			<location>
@@ -318,8 +368,8 @@
 				<buildingnumber>81A</buildingnumber>
 				<xposition>1185</xposition>
 				<yposition>1163</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>sthchappel_1</dashboardpath>
+		    </location>
 				
 				
 			<location>
@@ -328,8 +378,8 @@
 				<buildingnumber>81B</buildingnumber>
 				<xposition>1177</xposition>
 				<yposition>1203</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>sthchappelannex_1</dashboardpath>
+		    </location>
 				
 				
 			<location>
@@ -338,8 +388,8 @@
 				<buildingnumber>82</buildingnumber>
 				<xposition>1115</xposition>
 				<yposition>1214</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>corbetthouse_1</dashboardpath>
+		    </location>
 				
 			<location>
 				<title>83 Rogers Hall </title>
@@ -347,8 +397,8 @@
 				<buildingnumber>83</buildingnumber>
 				<xposition>1039</xposition>
 				<yposition>1228</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>rogers_1</dashboardpath>
+		    </location>
 				
 				
 			<location>
@@ -357,8 +407,8 @@
 				<buildingnumber>84</buildingnumber>
 				<xposition>1030</xposition>
 				<yposition>1187</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>sequoia_1</dashboardpath>
+		    </location>
 				
 				
 			<location>
@@ -367,8 +417,8 @@
 				<buildingnumber>85</buildingnumber>
 				<xposition>1070</xposition>
 				<yposition>1147</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>sthcampusconfcntr_1</dashboardpath>
+		    </location>
 				
 		</section>
 		
@@ -380,8 +430,8 @@
 				<buildingnumber>33</buildingnumber>
 				<xposition>1031</xposition>
 				<yposition>538</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>akin_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>34 Stewart</title>
@@ -389,8 +439,8 @@
 				<buildingnumber>34</buildingnumber>
 				<xposition>996</xposition>
 				<yposition>660</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>stewart_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>35 Odell</title>
@@ -399,7 +449,7 @@
 				<xposition>1033</xposition>
 				<yposition>697</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>40 West</title>
@@ -407,8 +457,8 @@
 				<buildingnumber>40</buildingnumber>
 				<xposition>1083</xposition>
 				<yposition>788</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>westhall_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>41 Roberts</title>
@@ -416,8 +466,8 @@
 				<buildingnumber>41</buildingnumber>
 				<xposition>1151</xposition>
 				<yposition>778</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>roberts_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>42 East</title>
@@ -425,8 +475,8 @@
 				<buildingnumber>42</buildingnumber>
 				<xposition>1194</xposition>
 				<yposition>832</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>easthall_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>43 Howard </title>
@@ -435,7 +485,7 @@
 				<xposition>1271</xposition>
 				<yposition>703</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 			<location>
 				<title>44 Platt (West and East)</title>
@@ -443,8 +493,8 @@
 				<buildingnumber>44</buildingnumber>
 				<xposition>1282</xposition>
 				<yposition>757</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>platt</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>45 Copeland (A-G) </title>
@@ -452,8 +502,8 @@
 				<buildingnumber>45</buildingnumber>
 				<xposition>1389</xposition>
 				<yposition>760</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>copeland_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>49 Hartzfeld (A-D)</title>
@@ -461,8 +511,8 @@
 				<buildingnumber>49</buildingnumber>
 				<xposition>1147</xposition>
 				<yposition>916</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>hartzfeld_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>50 Forest (Alder, Juniper, Manzanita, Ponderosa, Spruce, Tamarack)</title>
@@ -470,8 +520,8 @@
 				<buildingnumber>50</buildingnumber>
 				<xposition>1033</xposition>
 				<yposition>867</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>forest</dashboardpath>
+		    </location>
 			
 		</section>
 		
@@ -484,7 +534,7 @@
 				<xposition>1039</xposition>
 				<yposition>1228</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 
 		</section>
 		
@@ -495,8 +545,8 @@
 				<buildingnumber>L1</buildingnumber>
 				<xposition>529</xposition>
 				<yposition>275</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>legalresearchcntr</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>L2A Boley Law Library</title>
@@ -504,8 +554,8 @@
 				<buildingnumber>L2A</buildingnumber>
 				<xposition>374.25</xposition>
 				<yposition>172.10</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>woodhallboley</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>L2B Wood Hall</title>
@@ -513,8 +563,8 @@
 				<buildingnumber>L2B</buildingnumber>
 				<xposition>426.55</xposition>
 				<yposition>222.75</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>woodhallboley_1</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>L3 McCarty Classroom Complex</title>
@@ -522,8 +572,8 @@
 				<buildingnumber>L3</buildingnumber>
 				<xposition>449</xposition>
 				<yposition>160</yposition> 
-				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+				<dashboardpath>mccarty</dashboardpath>
+		    </location>
 			
 			<location>
 				<title>L4 Gantenbein</title>
@@ -532,7 +582,7 @@
 				<xposition>490</xposition>
 				<yposition>190</yposition> 
 				<dashboardpath>assets/swf/FakeDashboard.swf</dashboardpath>
-		</location>
+		    </location>
 			
 		</section>
 	

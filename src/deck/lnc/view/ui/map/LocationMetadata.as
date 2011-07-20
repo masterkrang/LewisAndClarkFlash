@@ -9,6 +9,7 @@ package deck.lnc.view.ui.map
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.filters.DropShadowFilter;
 	import flash.geom.ColorTransform;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
@@ -71,19 +72,23 @@ package deck.lnc.view.ui.map
 			closeButton.addEventListener(MouseEvent.CLICK, closeClick);
 			
 			locationName = new TextField();
+			locationName.alpha = 0;
 			locationName.defaultTextFormat = TextFormatFactory.getLocationMetadataTitleFormat();
 			TextFormatFactory.setTextParams(locationName);
 			locationName.width = WIDTH - (PADDING * 2);
 			
 			description = new TextField();
+			description.alpha = 0;
 			description.defaultTextFormat = TextFormatFactory.getLocationMetadataDescriptionFormat();
 			TextFormatFactory.setTextParams(description);
 			description.width = WIDTH - (PADDING * 2);
 			
 			dashboardLink = new TextField();
+			dashboardLink.alpha = 0;
 			dashboardLink.defaultTextFormat = TextFormatFactory.getLocationMetadataDashboardLinkFormat();
 			TextFormatFactory.setTextParams(dashboardLink);
-			dashboardLink.width = WIDTH - (PADDING * 2);
+			dashboardLink.multiline = false;
+			//dashboardLink.width = WIDTH - (PADDING * 2);
 			
 			
 			draw();
@@ -103,10 +108,9 @@ package deck.lnc.view.ui.map
 		
 		public function set dataProvider(_data:LocationVO):void {
 			data = _data;
-			trace("LocationMetadata::dataProvider");
+			//trace("LocationMetadata::dataProvider");
 			
 			setContents();
-			
 		}
 		
 		private function draw():void {
@@ -122,6 +126,14 @@ package deck.lnc.view.ui.map
 			addChild(dashboardLink);
 			
 			addChild(closeButton);
+			
+			//add filters
+			
+			addFilters();
+		}
+		
+		public function addFilters():void {
+			//this.filters = [new DropShadowFilter(4,45,0,.2)];
 		}
 		
 		public function setContents():void {
@@ -134,10 +146,29 @@ package deck.lnc.view.ui.map
 			description.x = -(WIDTH - PADDING);
 			description.y = -(HEIGHT - (PADDING + locationName.height + PADDING));
 			
-			dashboardLink.text = "View Dashboard"; //data.dashboardPath;
+			dashboardLink.text = "View Energy Dashboard"; //data.dashboardPath;
 			dashboardLink.x = -(WIDTH - PADDING);
 			dashboardLink.y = -(cloudTail.height);
-			dashboardLink.textColor = 0x000000;
+			//dashboardLink.textColor = 0x0000FF;
+			dashboardLink.background = true;
+			dashboardLink.backgroundColor = 0xCCCCCC;
+			dashboardLink.addEventListener(MouseEvent.CLICK, dashboardLinkClick);
+			dashboardLink.addEventListener(MouseEvent.MOUSE_OVER, dashboardLinkOver);
+			dashboardLink.addEventListener(MouseEvent.MOUSE_OUT, dashboardLinkOut);
+		}
+		
+		private function dashboardLinkClick(me:MouseEvent):void {
+			trace("dashboard link click");
+			
+			dispatchEvent(new Event(DASHBOARD_LINK_CLICK));
+		}
+		
+		private function dashboardLinkOver(me:MouseEvent):void {
+			//trace("dashboard link over");
+		}
+		
+		private function dashboardLinkOut(me:MouseEvent):void {
+			//trace("dashboard link out");
 		}
 		
 		private function showContents():void {
@@ -145,12 +176,14 @@ package deck.lnc.view.ui.map
 			TweenMax.to(locationName, .2, {alpha:1});
 			TweenMax.to(description, .2, {alpha:1});
 			TweenMax.to(locationName, .2, {alpha:1});
+			TweenMax.to(dashboardLink, .2, {alpha:1});
 		}
 		
 		private function hideContents():void {
 			TweenMax.to(closeButton, .2, {alpha:0});
 			TweenMax.to(locationName, .2, {alpha:0});
 			TweenMax.to(description, .2, {alpha:0});
+			TweenMax.to(dashboardLink, .2, {alpha:0});
 			//add callback
 			TweenMax.to(locationName, .05, {alpha:0, onComplete:hideContentsComplete});
 		}
@@ -175,6 +208,30 @@ package deck.lnc.view.ui.map
 			return _hasBeenInited;
 		}
 		
+		/************ CLOUD TAIL PROPERTIES API **************/
+		
+		/********** CLOUD TAIL POSITION ***********/
+		
+		public function getCloudTailX():Number {
+			return cloudTail.x;
+		}
+		
+		public function getCloudTailY():Number {
+			return cloudTail.y;
+		}
+		
+		public function getCloudTailHeight():Number {
+			return cloudTail.height;
+		}
+		
+		public function getCloudTailWidth():Number {
+			return cloudTail.width;
+		}
+		
+		
+		
+		/*****************************************************/
+		
 		public function show():void {
 			_hasBeenInited = true;
 			showBG();
@@ -191,7 +248,7 @@ package deck.lnc.view.ui.map
 		
 		private function showBG():void {
 			var showTime:Number = .15;
-			TweenMax.to(this, showTime, {alpha:1});
+			TweenMax.to(this, showTime, {autoAlpha:1});
 			TweenMax.to(bg, showTime, {scaleX:1, scaleY:1, onComplete:showBGComplete});
 		}
 		
@@ -199,26 +256,27 @@ package deck.lnc.view.ui.map
 			//first hide contents, then bg
 			hideContents();
 			setShowing(false);
+			
+			//now we 
 		}
 		
 		private function showBGComplete():void {
 			//show the rest of the data
-			trace("showBGComplete");
+			//trace("showBGComplete");
 			showContents();
 		}
 		
 		private function hideBGComplete():void {
-			//TweenMax.to(closeButton, .2, {autoAlpha:0});
+			TweenMax.to(this, .2, {autoAlpha:0});
 			//dispatchEvent(new Event(HIDE_COMPLETE));
 			
 			//differentiated between a close 'x" click and simply clicking on another location
 			//if the 'x' is clicked then we need to tell the framework to zoom out
 			if(closeButtonClicked) {
-				trace("dispatching metadata_closed");
+				//trace("dispatching metadata_closed");
 				dispatchEvent(new Event(METADATA_CLOSE));
-				closeButtonClicked = true;
+				closeButtonClicked = false;
 			}
-			
 		}
 	}
 }

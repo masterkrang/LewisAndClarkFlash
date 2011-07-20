@@ -1,11 +1,11 @@
 package deck.lnc.view.ui.twitterwidget
 {
+	import com.kurt.util.TextFormatFactory;
+	
 	import deck.lnc.model.vo.twitter.TweetVO;
 	
 	import flash.display.Sprite;
 	import flash.text.TextField;
-	
-	import com.kurt.util.TextFormatFactory;
 	
 	public class Tweet extends Sprite
 	{
@@ -14,6 +14,8 @@ package deck.lnc.view.ui.twitterwidget
 		public var location:String;
 		public var bg:Sprite;
 		public var index:uint;
+		
+		public static const WIDTH:Number = 475;
 	
 		//public var tweet
 		public function Tweet()
@@ -29,7 +31,7 @@ package deck.lnc.view.ui.twitterwidget
 			TextFormatFactory.setTextParams(text);
 			
 			//TextFormatFactory
-			text.width = 450;
+			text.width = WIDTH;
 			draw();
 		}
 		

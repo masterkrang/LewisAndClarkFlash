@@ -29,8 +29,11 @@ package
 	import flash.events.IOErrorEvent;
 	import flash.events.MouseEvent;
 	import flash.events.ProgressEvent;
+	import flash.events.SecurityErrorEvent;
+	import flash.external.ExternalInterface;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
+	import flash.system.Security;
 	
 	import org.puremvc.as3.patterns.facade.*;
 	
@@ -82,15 +85,33 @@ package
 		
 		public function LewisAndClarkFlash()
 		{
+			//loadCrossDomainPolicyFile();
 			init();
-			//addChild(new MapVector());
-			//addChild(new LocationMetadataBG());
-			//addChild(new MapVector());
+		}
+		
+		public function loadCrossDomainPolicyFile():void {
+			Security.allowDomain("http://www.adshy.com");
+			Security.loadPolicyFile("http://www.adshy.com/crossdomain.xml");
+			var request:URLRequest = new URLRequest("http://www.adshy.com/crossdomain.xml");
+			var loader:URLLoader = new URLLoader();
+			loader.addEventListener(Event.COMPLETE, policyLoaded);
+			loader.addEventListener(IOErrorEvent.IO_ERROR, policyIOError);
+			loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, policySecurityError);
+			loader.load(request);
+			//init();
+		}
+		
+		private function policyLoaded(e:Event):void {
 			
-			//var l:LocationMetadataBG = new LocationMetadataBG();
-			//l.x = 100;
-			//l.y = 100;
-			//addChild(l);
+			init();
+		}
+		
+		private function policyIOError(ioe:IOErrorEvent):void {
+			trace("ioe " + ioe.toString());
+		}
+		
+		private function policySecurityError(see:SecurityErrorEvent):void {
+			trace("see " + see.toString());
 		}
 		
 		public function init():void {
@@ -99,10 +120,6 @@ package
 			createTwitterWidget();
 			
 			createMap();
-			//load map
-			//loadMap();
-			//addChild(map)
-			//mapLoaded();
 			
 			key = new Key();
 			
@@ -142,6 +159,8 @@ package
 			twitterWidget.addEventListener(TwitterWidget.MAXIMIZE, twitterWidgetMaximize);
 			twitterWidget.addEventListener(TwitterWidget.TWEET_SHOW, tweetShow);
 			twitterWidget.addEventListener(TwitterWidget.TWEET_HIDE, tweetHide);
+			
+			//twitterWidget.addEventListener(TwitterWidget.CLICK, twitterWidgetClick);
 		}
 		
 		private function createMap():void {
@@ -166,9 +185,6 @@ package
 		
 		private function mapLoadComplete(e:Event = null):void {
 			
-			
-			trace("add map");
-			
 			mapLoaded = true;
 			
 			map.alpha = 0;
@@ -180,9 +196,6 @@ package
 			TweenMax.to(map, 1, {alpha:1});
 			
 			addChild(map);
-			
-			
-			
 			//stack
 			
 			//add list
@@ -218,20 +231,15 @@ package
 			var sw:Number = stage.stageWidth;
 			var sh:Number = stage.stageHeight
 			
-			//trace("-------------");
-			//trace("stage resize event\nstagewidth = " + stage.stageWidth + " stageheight = " + stage.stageHeight);
 			//perhaps bubble event through puremvc to the concerned views with new stage size
 			
 			//resize twitter widget
 			
-			//trace("stagewidth / 2 - twitterWidget.width / 2 " + (stage.stageWidth / 2 - twitterWidget.width / 2));
-			//var toX:Number = sw / 2 - twitterWidget.width / 2;
-			//TweenLite.to(twitterWidget, 1, {x:toX});
-			//twitterWidget.x = toX;
-			//trace("tox " + toX);
-			
 			twitterWidget.setWidth(stage.stageWidth);
 			
+			//twitterWidget.resize(sw, sh);
+				
+				
 			var toY:Number;// = stage.stageHeight - TRAY_HEIGHT;
 		
 			if(twitterWidget.isOpen()) {
@@ -247,7 +255,6 @@ package
 			
 			
 			//resize map
-			//snapFit(map);
 			
 			if(mapLoaded) {
 				//need to wait till it's loaded before scaling and showing
@@ -259,7 +266,6 @@ package
 				map.setCurrentMapZoomePercent(map.scaleX);
 				
 				map.x = LEFT_PANEL_WIDTH + (mapAreaWidth / 2 - map.width / 2);
-				//map.x = LEFT_PANEL_WIDTH;
 				map.y = mapAreaHeight / 2 - map.height / 2;
 			}
 			
@@ -271,10 +277,7 @@ package
 			
 			//key
 			//place key in left bottom corner based on shape of map
-			//key.x = 10;
 			key.y = stageHeightMinusWidgetHalfed; //(sh - key.height) - 10;
-			//key.setWidth(LEFT_PANEL_WIDTH);
-			//key.setHeight(stageHeightMinusWidgetHalfed);
 			key.resize(LEFT_PANEL_WIDTH + LIST_PANEL_SCROLLBAR_WIDTH, stageHeightMinusWidgetHalfed);
 			
 			//scrim
@@ -327,7 +330,7 @@ package
 		/************* MAP *********************************/
 		
 		public function mapLocationClick(loc:Location):void {
-			trace("LewisAndClarkFlash::mapLocationClick " + loc.xPosition);
+			//trace("LewisAndClarkFlash::mapLocationClick ");
 			
 			//disable mouse clicks and set map ready for zooming
 			//map.mouseEnabled = false;
@@ -389,6 +392,12 @@ package
 			var newMapNegativeX:Number = newLocationXPosition - (LEFT_PANEL_WIDTH + getMapAreaWidth() / 2);
 			var newMapNegativeY:Number = newLocationYPosition - (getMapAreaHeight() / 2);
 			
+			//try and put it on the right .25 % of the screen so we have room for info bubble
+			
+			//var fourths:Number = getMapAreaWidth() / 4;
+			//newMapNegativeX = newLocationXPosition - (LEFT_PANEL_WIDTH + fourths * 3);
+			//newMapNegativeY = newLocationYPosition - ((getMapAreaHeight() / 4) * 3);
+			
 			//trace("amountPercentMapNeedsToGrow " + amountPercentMapNeedsToGrow);
 			TweenMax.to(map, ZOOM_IN_TIME, {scaleX:resizePercent, scaleY:resizePercent, x:-newMapNegativeX, y:-newMapNegativeY, onComplete:zoomInOnLocationComplete});
 		
@@ -401,8 +410,42 @@ package
 		private function zoomInOnLocationComplete():void {
 			//showDashboard();
 			
+			//start drag while in zoom mode
+			makeDraggable();
+			
 			//show location metadata panel
 			showLocationMetadata();
+		}
+		
+		private function makeDraggable():void {
+			map.addEventListener(MouseEvent.MOUSE_DOWN, onMapMouseDown);
+			map.addEventListener(MouseEvent.MOUSE_UP, onMapMouseUp);
+		}
+		
+		private function onMapMouseDown(me:MouseEvent):void {
+			
+			//check for location metadata panel
+			if(locationMetadata.isShowing()) {
+				locationMetadata.hide();
+			}
+			
+			map.startDrag();
+			
+			//event listener for dragging
+			addEventListener(Event.ENTER_FRAME, mapDragging);
+		}
+		
+		private function onMapMouseUp(me:MouseEvent):void {
+			map.stopDrag();
+
+			if(hasEventListener(Event.ENTER_FRAME)) {
+				removeEventListener(Event.ENTER_FRAME, mapDragging);
+			}
+		}
+		
+		private function mapDragging(e:Event):void {
+			//make sure map doesn't go outside of the map area
+			trace("map dragging x / y " + map.x + " / " + map.y); 
 		}
 		
 		private function zoomOutOfLocation():void {
@@ -429,7 +472,7 @@ package
 		}
 		
 		private function mapZoomOutOfLocationComplete():void {
-			trace("mapZoomOutOfLocationComplete");
+			//trace("mapZoomOutOfLocationComplete");
 			
 			//re enable mouse children of map
 			map.enable();
@@ -438,11 +481,6 @@ package
 		private function mapScaleUpComplete():void {
 			//dispatch to dashboard to show, probably should be init'd before 
 			
-		}
-		
-		private function traceGrownMapSize():void {
-			trace("grow map width " + map.width + " height " + map.height);
-			trace("map scaleX " + map.scaleX + " map.scaleY " + map.scaleY);
 		}
 		
 		private function getObjectScaleFactor(s:Sprite):Number {
@@ -457,7 +495,7 @@ package
 			s.graphics.beginFill(0x000000);
 			s.graphics.drawRect(0,0,w,h);
 			s.graphics.endFill();
-			trace("created fake sprite w / h " + s.width + " / " + s.height);
+			//trace("created fake sprite w / h " + s.width + " / " + s.height);
 			return s;
 		}
 		
@@ -475,12 +513,10 @@ package
 		
 		/************* LOCATION METADATA *******************/
 		
-		
-		
 		public function showLocationMetadata():void {
 			//locationMetadata.dataProvider =
 			locationMetadataShowing = true;
-			trace("showLocationMetadata");
+			//trace("showLocationMetadata");
 			if(locationMetadata) {
 				addChild(locationMetadata);
 			}
@@ -494,8 +530,8 @@ package
 			var centerX:Number = LEFT_PANEL_WIDTH + getMapAreaWidth() / 2;
 			var centerY:Number = getMapAreaHeight() / 2;
 			
-			var newX:Number = centerX - ((selectedLocation.originalWidth * map.getCurrentMapZoomPercent()) / 2);
-			var newY:Number = centerY - ((selectedLocation.originalHeight * map.getCurrentMapZoomPercent()) / 2);
+			var newX:Number = centerX - (((selectedLocation.originalWidth * map.getCurrentMapZoomPercent()) / 2) + locationMetadata.getCloudTailX());
+			var newY:Number = centerY - (((selectedLocation.originalHeight * map.getCurrentMapZoomPercent()) / 2) - locationMetadata.getCloudTailHeight());
 			
 			locationMetadata.x = newX;
 			locationMetadata.y = newY;
@@ -515,14 +551,15 @@ package
 		
 		public function locationMetadataCloseClick(e:Event):void {
 			zoomOutOfLocation();
-		}
-		
-		public function locationMetadataHideComplete(e:Event):void {
-			//trace("remove locationmetadata outside");
 			if(contains(locationMetadata)) {
 				//trace("remove locationMetadata");
 				removeChild(locationMetadata);
 			}
+		}
+		
+		public function locationMetadataHideComplete(e:Event):void {
+			trace("LewisAndClarkFlash::locationMetadataHideComplete");
+			
 		}
 		
 		/***************************************************/
@@ -554,14 +591,27 @@ package
 		}
 		
 		public function showDashboard():void {
+			
+			//init the dashboard
+			//initDashboard(map.getSelectedLocation());
+			
 			//show scrim
-			showScrim();
+			//showScrim();
+			
+			trace("showDashboard");
+			
+			//open iframe with dashboard
+			//get clicked dashboard url param
+			//var 
+			var href:String = map.getSelectedLocation().dashboardPath; //"akin_1";
+			ExternalInterface.call("openDashboard", href);
 			
 			dashboardOpen = true;
 		}
 		
 		public function hideDashboard():void {
-			fadeOutDashboard();
+			//fadeOutDashboard();
+			
 			
 			
 			dashboardOpen = false
@@ -615,15 +665,33 @@ package
 		private function twitterWidgetMinimize(e:Event):void {
 			//expand the widget 
 			var toY:Number = stage.stageHeight - TRAY_HEIGHT; // / 2 - twitterWidget.width / 2;
-			TweenLite.to(twitterWidget, 1, {y:toY});
+			
+			twitterWidget.minimize();
+			
+			TweenLite.to(twitterWidget, 1, {y:toY, x:0});
 		}
 		
 		private function twitterWidgetMaximize(e:Event):void {
 			//expand the widget 
-			var toY:Number = stage.stageHeight / 2 - twitterWidget.width / 2;
-			TweenLite.to(twitterWidget, 1, {y:toY});
+			var toY:Number;// = stage.stageHeight / 2 - twitterWidget.width / 2;
+			toY = 0;
+			var toX:Number = 0;
+			
+			//call twitter widgets internal method to maximize (should probably all be done in the widget itself?)
+			
+			twitterWidget.maximize(stage.stageWidth, stage.stageHeight);
+			
+			TweenLite.to(twitterWidget, 1, {y:toY, x:toX});
 		}
+		
+		private function twitterWidgetClick(e:Event):void {
+			//twitterWidget.maximize(stage.stageWidth, stage.stageHeight);
+			//TweenMax.to(twitterWidget, .3, {x:0, y:0});
+		} 
+		
 		/************************************************/
+		
+		
 		
 		/*************** SCRIM **************************/
 		
@@ -642,11 +710,11 @@ package
 			trace("scrim show complete");
 			
 			//now reveal the dashboard
-			fadeInDashboard();
+			//fadeInDashboard();
 		}
 		
 		private function hideScrim():void {
-			TweenMax.to(scrim, .2, {autoAlpha:0, onComplete:zoomOutOfLocation});
+			TweenMax.to(scrim, .2, {autoAlpha:0}); //, onComplete:zoomOutOfLocation});
 		}
 		
 		/************************************************/

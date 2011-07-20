@@ -57,9 +57,9 @@ package deck.lnc.view.mediators
 		
 		public function onLocationClick(e:Event):void {
 			
-			trace("map.locations[map.getSelected()] " + map.locations[map.getSelected()]);
+			//trace("map.locations[map.getSelected()] " + map.locations[map.getSelected()]);
 			var clickedLocation:Location = map.locations[map.getSelected()]; //Location(e.target).dataProvider;
-			trace("MapMediator::onLocationClick " + clickedLocation);
+			//trace("MapMediator::onLocationClick " + clickedLocation);
 			sendNotification(ApplicationFacade.MAP_LOCATION_CLICK, clickedLocation);
 		}
 		

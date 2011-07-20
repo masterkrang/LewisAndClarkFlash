@@ -12,9 +12,9 @@ package com.kurt.util
 		public static function getTweetTextFormat():TextFormat {
 			//trace("turn fonts back on");
 			
-			//var font:Font = new StagStencilBold();
+			var font:Font = new ArialFont();
 			var tf:TextFormat = new TextFormat();
-			//tf.font = font.fontName;
+			tf.font = font.fontName;
 			tf.size = 14;
 			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;
@@ -22,11 +22,11 @@ package com.kurt.util
 		}
 		
 		public static function getListItemFormat():TextFormat {
-			//var font:Font = new StagStencilBold();
+			var font:Font = new ArialFont();
 			var tf:TextFormat = new TextFormat();
-			//tf.font = font.fontName;
+			tf.font = font.fontName;
 			tf.size = 14;
-			tf.color = 0x000000;
+			tf.color = 0x333333;
 			tf.align = TextFormatAlign.LEFT;
 			return tf;
 		}
@@ -34,10 +34,11 @@ package com.kurt.util
 		public static function getLocationMetadataTitleFormat():TextFormat {
 			//trace("turn fonts back on");
 			
-			//var font:Font = new StagStencilBold();
+			var font:Font = new Frutiger();
 			var tf:TextFormat = new TextFormat();
-			//tf.font = font.fontName;
-			tf.size = 14;
+			tf.font = font.fontName;
+			tf.size = 16;
+			//tf.bold = true;
 			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;
 			return tf;
@@ -46,10 +47,10 @@ package com.kurt.util
 		public static function getLocationMetadataDescriptionFormat():TextFormat {
 			//trace("turn fonts back on");
 			
-			//var font:Font = new StagStencilBold();
+			var font:Font = new ArialFont();
 			var tf:TextFormat = new TextFormat();
-			//tf.font = font.fontName;
-			tf.size = 14;
+			tf.font = font.fontName;
+			tf.size = 13;
 			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;
 			return tf;
@@ -58,9 +59,9 @@ package com.kurt.util
 		public static function getLocationMetadataDashboardLinkFormat():TextFormat {
 			//trace("turn fonts back on");
 			
-			//var font:Font = new StagStencilBold();
+			var font:Font = new ArialFont();
 			var tf:TextFormat = new TextFormat();
-			//tf.font = font.fontName;
+			tf.font = font.fontName;
 			tf.size = 14;
 			tf.color = 0xFFFFFF;
 			tf.align = TextFormatAlign.LEFT;

@@ -20,6 +20,7 @@ package deck.lnc.view.ui.map
 	import flash.events.ProgressEvent;
 	import flash.filters.BlurFilter;
 	import flash.filters.DropShadowFilter;
+	import flash.filters.GlowFilter;
 	import flash.net.URLRequest;
 	import flash.sampler.getInvocationCount;
 	import flash.system.ApplicationDomain;
@@ -58,17 +59,15 @@ package deck.lnc.view.ui.map
 		private var regions:Vector.<Region>;
 		public var locations:Vector.<Location>;
 		
+		public var otherLocationsComplete:OtherLocationsComplete;
+		
 		//panel that's pops up on rollover of regions, or on highlight of region
 		private var locationMetadata:LocationMetadata;
 		
 		private var currentMapZoomPercent:Number;
 		
-		//private var building1:Building1;
-		
-		//building sprites
-		//private var building3:Sprite;
-		//private var building26:Sprite;
-		
+		private var _zoomed:Boolean = false; //keeps track of whether the map is zoomed (mainly for map drag events)
+	
 		public var locationOverIndex:uint = 0; //may need to take this off of 0
 	
 		public function Map()
@@ -108,7 +107,9 @@ package deck.lnc.view.ui.map
 		}
 		
 		private function draw():void {
-			addChild(new OtherMapSections());
+			//addChild(new OtherMapSections());
+			otherLocationsComplete = new OtherLocationsComplete();
+			addChild(otherLocationsComplete);
 			//addChild(map);
 			
 			//addChild(
@@ -180,8 +181,6 @@ package deck.lnc.view.ui.map
 			
 			//loadMap();
 			
-			
-			
 			//setMarkers();
 			//placeMarkers();
 			
@@ -194,6 +193,14 @@ package deck.lnc.view.ui.map
 		
 		public function getCurrentMapZoomPercent():Number {
 			return currentMapZoomPercent;
+		}
+		
+		public function get zoomed():Boolean {
+			return _zoomed;
+		}
+		
+		public function set zoomed(_zoom:Boolean):void {
+			_zoomed = _zoom;
 		}
 		
 		/****************** LOCATIONS ********************/
@@ -260,6 +267,9 @@ package deck.lnc.view.ui.map
 				}
 			}
 			
+			
+			//turn off other locations map background filters off
+			//otherLocationsComplete.filters = [];
 		}
 		
 		private function getLocation(lvo:LocationVO):Location {
@@ -315,17 +325,30 @@ package deck.lnc.view.ui.map
 		
 		
 		public function locationClick(me:MouseEvent):void {
-			trace("location click");
+			//trace("Map::locationClick");
 			
-		//lock the map, maybe lock the app
+			//lock the map, maybe lock the app
 			var clickedLocation:Location = Location(me.target);
+			var clickedIndex:uint = Location(me.target).getIndex();
 			//do map specific click stuff like selections
+			
+			//iterate through and turn off on selcttion effect
+			var llen:uint = locations.length;
+			for (var i:uint = 0; i < llen; i++) {
+				if(clickedIndex != i) {
+					//turn off
+					//locations[i].filters = [];
+				} else {
+					//turn on clicked selection effect
+					//locations[i].filters = [new GlowFilter(0x009933, 1, 10, 10)]
+				}
+			}
 			
 			//var scaleFactor:Number = getLocationScaleFactor(clickedLocation);
 			//trace("this.width " + this.width + " this.height " + this.height);
 			//TweenMax.to(clickedLocation, .5, {scaleX:scaleFactor, scaleY:scaleFactor, x:originalWidth / 2, y:originalHeight / 2});
 			
-			setSelected(Location(me.target).getIndex());
+			setSelected(clickedIndex);
 			
 			dispatchEvent(new Event(LOCATION_CLICK));
 		}
@@ -356,6 +379,10 @@ package deck.lnc.view.ui.map
 					locations[i].filters = [new BlurFilter()];
 				}
 			}
+			
+			//add blur to "other location clip"
+			//otherLocationsComplete.filters = [new BlurFilter()];
+			
 		}
 		
 		private function locationOut(me:MouseEvent):void {

@@ -38,13 +38,15 @@ package deck.lnc.view.ui.twitterwidget
 		public static const TWEET_SHOW:String = "tweetShow";
 		public static const TWEET_HIDE:String = "tweetHide";
 		
+		public static const CLICK:String = "clicked";
+		
 		
 		private var tweetShowing:Boolean = false;
 		private var currentIndex:uint = 0; //keeps track of what tweet should be showing
 		
 		//tweet timer
 		private var tweetTimer:Timer;
-		private var tweetDuration:uint = 6000;
+		private var tweetDuration:uint = 8000;
 		
 		//user icon
 		private var userIconLoader:Loader;
@@ -65,6 +67,8 @@ package deck.lnc.view.ui.twitterwidget
 			
 			tweetTimer = new Timer(tweetDuration);
 			tweetTimer.addEventListener(TimerEvent.TIMER, tweetTimerTick);
+			
+			addEventListener(MouseEvent.CLICK, onClick);
 			
 			draw();
 		}
@@ -88,6 +92,16 @@ package deck.lnc.view.ui.twitterwidget
 			
 			//dispatchEvent(new Event(TWEET_SHOW));
 			tweetTimer.start();
+		}
+		
+		private function onClick(me:MouseEvent):void {
+			//probably have to dispatch to parent
+			if(isOpen()) {
+				close();
+			} else {
+				open();
+			}
+			//dispatchEvent(new Event(CLICK));
 		}
 		
 		private function getTweets(tvo:TwitterVO):Vector.<Tweet> {
@@ -159,7 +173,7 @@ package deck.lnc.view.ui.twitterwidget
 		}
 		
 		private function userIconLoaded(e:Event):void {
-			trace("user icon width / height " + userIconLoader.width + " / " + userIconLoader.height);
+			//trace("user icon width / height " + userIconLoader.width + " / " + userIconLoader.height);
 			addChild(userIconLoader);
 		}
 		
@@ -195,7 +209,8 @@ package deck.lnc.view.ui.twitterwidget
 		}
 		
 		public function setWidth(w:Number):void {
-			bg.width = w;
+			_width = w;
+			bg.width = _width;
 		}
 		
 		private function swapTweet():void {
@@ -264,15 +279,17 @@ package deck.lnc.view.ui.twitterwidget
 			//hide close button until the all the tweets are showing?
 			closeButton.alpha = .2;
 			
-			addChild(closeButton);
+			//addChild(closeButton);
 		}
 		
-		private function minimize(e:Event):void {
-			dispatchEvent(new Event(MINIMIZE));
+		public function minimize(e:Event = null):void {
+			//dispatchEvent(new Event(MINIMIZE));
+			TweenMax.to(bg, .3, {width:_width, height:_height})
 		}
 		
-		private function maximize(e:Event):void {
-			dispatchEvent(new Event(MAXIMIZE));
+		public function maximize(w:Number, h:Number):void {
+			//dispatchEvent(new Event(MAXIMIZE));
+			TweenMax.to(bg, .3, {width:w, height:h});
 		}
 		
 		private function revealTweets():void {
@@ -293,13 +310,17 @@ package deck.lnc.view.ui.twitterwidget
 		
 		public function open():void {
 			_open = true;
+			
+			dispatchEvent(new Event(MAXIMIZE));
 		}
 		
 		public function close():void {
 			_open = false;
+			
+			dispatchEvent(new Event(MINIMIZE));
 		}
 		
-		private function setSize(w:Number, h:Number):void {
+		public function setSize(w:Number, h:Number):void {
 			//stageWidth = sw;
 			//stageHeight = sh;
 			
@@ -323,7 +344,7 @@ package deck.lnc.view.ui.twitterwidget
 		
 		public function resize(w:Number, h:Number):void {
 			//do all the resize stuff here
-			//setSize(w, h);
+			setSize(w, h);
 		}
 	}
 }
